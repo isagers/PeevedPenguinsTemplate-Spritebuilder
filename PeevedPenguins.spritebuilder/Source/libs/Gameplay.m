@@ -17,7 +17,7 @@
 
 -(void)didLoadFromCCB{
     self.userInteractionEnabled = TRUE;
-    CCScene *level = [CCBReader loadAsScene:@"Levels/Level1"];
+    CCScene *level = [CCBReader load:@"Levels/Level1"];
     [_levelNode addChild:level];
 }
 
@@ -40,7 +40,6 @@
     CGPoint force = ccpMult(launchDirection, 8000);
     [penguin.physicsBody applyForce:force];
     
-    //camera follow
     // ensure followed object is in visible are when starting
     self.position = ccp(0, 0);
     CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
