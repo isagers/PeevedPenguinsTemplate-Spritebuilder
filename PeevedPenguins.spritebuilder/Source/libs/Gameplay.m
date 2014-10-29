@@ -43,7 +43,7 @@
     //camera follow
     // ensure followed object is in visible are when starting
     self.position = ccp(0, 0);
-    CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
+    CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:NULL];
     [self runAction:follow];
 }
 
