@@ -7,6 +7,9 @@
 //
 
 #import "Gameplay.h"
+#import "Penguin.h"
+#import "MainScene.h"
+#import "Seal.h"
 
 @implementation Gameplay{
     CCPhysicsNode *_physicsNode;
@@ -40,6 +43,8 @@
     CGPoint force = ccpMult(launchDirection, 8000);
     [penguin.physicsBody applyForce:force];
     
+    // ensure followed object is in visible are when starting
+    self.position = ccp(0, 0);
     CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
     [self runAction:follow];
 }
