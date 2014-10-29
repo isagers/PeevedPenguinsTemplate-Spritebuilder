@@ -17,7 +17,7 @@
 
 -(void)didLoadFromCCB{
     self.userInteractionEnabled = TRUE;
-    CCScene *level = [CCBReader load:@"Levels/Level1"];
+    CCNode *level = [CCBReader load:@"Levels/Level1"];
     [_levelNode addChild:level];
 }
 
