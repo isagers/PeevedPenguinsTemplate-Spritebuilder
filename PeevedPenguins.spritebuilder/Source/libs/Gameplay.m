@@ -17,7 +17,7 @@
 
 -(void)didLoadFromCCB{
     self.userInteractionEnabled = TRUE;
-    CCScene *level = [CCBReader load:@"Levels/Level1"];
+    CCScene *level = [CCBReader loadAsScene:@"Levels/Level1"];
     [_levelNode addChild:level];
 }
 
@@ -44,6 +44,10 @@
     self.position = ccp(0, 0);
     CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
     [self runAction:follow];
+}
+
+-(void)retry{
+    [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"Gameplay"]];
 }
 
 @end
